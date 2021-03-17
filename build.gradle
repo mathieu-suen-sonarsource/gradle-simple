@@ -6,6 +6,10 @@ group = 'com.github.jitpack'
 sourceCompatibility = 1.8 // java 8
 targetCompatibility = 1.8
 
+plugins {
+  id "org.sonarqube" version "3.1.1"
+}
+
 repositories {
   mavenCentral()
 }
@@ -47,4 +51,10 @@ install {
 wrapper {
     gradleVersion = "6.1.1"
     distributionType = Wrapper.DistributionType.ALL
+}
+
+sonarqube {
+  properties {
+    property "sonar.projectKey", "t"
+  }
 }
